@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'KlavikaRegCaps-SC';
+  src: url('../fonts/KlavikaRegCaps-SC.eot');
+  src: url('../fonts/KlavikaRegCaps-SC.woff2') format('woff2'),
+       url('../fonts/KlavikaRegCaps-SC.woff') format('woff'),
+       url('../fonts/KlavikaRegCaps-SC.ttf') format('truetype'),
+       url('../fonts/KlavikaRegCaps-SC.svg#KlavikaRegCaps-SC') format('svg'),
+       url('../fonts/KlavikaRegCaps-SC.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bebas';
+  src: url('../fonts/Bebas.eot');
+  src: url('../fonts/Bebas.woff2') format('woff2'),
+       url('../fonts/Bebas.woff') format('woff'),
+       url('../fonts/Bebas.ttf') format('truetype'),
+       url('../fonts/Bebas.svg#Bebas') format('svg'),
+       url('../fonts/Bebas.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cambay-Regular';
+  src: url('../fonts/Cambay-Regular.eot');
+  src: url('../fonts/Cambay-Regular.woff2') format('woff2'),
+       url('../fonts/Cambay-Regular.woff') format('woff'),
+       url('../fonts/Cambay-Regular.ttf') format('truetype'),
+       url('../fonts/Cambay-Regular.svg#Cambay-Regular') format('svg'),
+       url('../fonts/Cambay-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cambay-Italic';
+  src: url('../fonts/Cambay-Italic.eot');
+  src: url('../fonts/Cambay-Italic.woff2') format('woff2'),
+       url('../fonts/Cambay-Italic.woff') format('woff'),
+       url('../fonts/Cambay-Italic.ttf') format('truetype'),
+       url('../fonts/Cambay-Italic.svg#Cambay-Italic') format('svg'),
+       url('../fonts/Cambay-Italic.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cambay-BoldItalic';
+  src: url('../fonts/Cambay-BoldItalic.eot');
+  src: url('../fonts/Cambay-BoldItalic.woff2') format('woff2'),
+       url('../fonts/Cambay-BoldItalic.woff') format('woff'),
+       url('../fonts/Cambay-BoldItalic.ttf') format('truetype'),
+       url('../fonts/Cambay-BoldItalic.svg#Cambay-BoldItalic') format('svg'),
+       url('../fonts/Cambay-BoldItalic.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cambay-Bold';
+  src: url('../fonts/Cambay-Bold.eot');
+  src: url('../fonts/Cambay-Bold.woff2') format('woff2'),
+       url('../fonts/Cambay-Bold.woff') format('woff'),
+       url('../fonts/Cambay-Bold.ttf') format('truetype'),
+       url('../fonts/Cambay-Bold.svg#Cambay-Bold') format('svg'),
+       url('../fonts/Cambay-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSans-Bold';
+  src: url('../fonts/NotoSans-Bold.eot');
+  src: url('../fonts/NotoSans-Bold.woff2') format('woff2'),
+       url('../fonts/NotoSans-Bold.woff') format('woff'),
+       url('../fonts/NotoSans-Bold.ttf') format('truetype'),
+       url('../fonts/NotoSans-Bold.svg#NotoSans-Bold') format('svg'),
+       url('../fonts/NotoSans-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSans-BoldItalic';
+  src: url('../fonts/NotoSans-BoldItalic-Bold.eot');
+  src: url('../fonts/NotoSans-BoldItalic-Bold.woff2') format('woff2'),
+       url('../fonts/NotoSans-BoldItalic-Bold.woff') format('woff'),
+       url('../fonts/NotoSans-BoldItalic-Bold.ttf') format('truetype'),
+       url('../fonts/NotoSans-BoldItalic-Bold.svg#NotoSans-BoldItalic-Bold') format('svg'),
+       url('../fonts/NotoSans-BoldItalic-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSans-Italic';
+  src: url('../fonts/NotoSans-Italic-Bold.eot');
+  src: url('../fonts/NotoSans-Italic-Bold.woff2') format('woff2'),
+       url('../fonts/NotoSans-Italic-Bold.woff') format('woff'),
+       url('../fonts/NotoSans-Italic-Bold.ttf') format('truetype'),
+       url('../fonts/NotoSans-Italic-Bold.svg#NotoSans-Italic-Bold') format('svg'),
+       url('../fonts/NotoSans-Italic-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url('../fonts/NotoSans.eot');
+  src: url('../fonts/NotoSans.woff2') format('woff2'),
+       url('../fonts/NotoSans.woff') format('woff'),
+       url('../fonts/NotoSans.ttf') format('truetype'),
+       url('../fonts/NotoSans.svg#NotoSans') format('svg'),
+       url('../fonts/NotoSans.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('../fonts/BebasNeue.eot');
+  src: url('../fonts/BebasNeue.woff2') format('woff2'),
+       url('../fonts/BebasNeue.woff') format('woff'),
+       url('../fonts/BebasNeue.ttf') format('truetype'),
+       url('../fonts/BebasNeue.svg#BebasNeue') format('svg'),
+       url('../fonts/BebasNeue.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,396 @@
+/*Bootstrap override*/
+.container{
+	width: 990px;
+}
+
+
+
+/* General Styles */
+
+body{
+	font-family: Arial;
+}
+
+h1{
+	font-family: Arial;
+}
+
+strong{
+	font-family: Arial;
+}
+
+a, a:hover, a:link, a:active, a:visited{
+	text-decoration: none;
+}
+
+.img-responsive{
+	margin: auto;
+}
+
+.form-control{
+	background: #f2f2f2;
+	border: 0px;
+}
+
+
+/*Buttons*/
+.btn-mapfre{
+	background-color: white;
+	text-align: center;
+	color: #fb1800;
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 18px;
+}
+
+/*Margins, paddings*/
+.mtop{
+	margin-top: 20px;
+}
+
+
+/*Header*/
+h1.fb-header{
+	font-size: 15px;
+	margin: 20px 0px 36px;
+	padding: 13px 0px;
+	padding-left: 58px;
+	background-image: url(../img/logo-fb.png);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	background-color: rgba(255, 255, 255, 0.4);
+	position: relative;
+	display: inline-block;
+	padding-right: 55px;
+}
+
+h1.fb-header:after{
+	content:'';
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 100px;
+	content:'';
+	position: absolute;
+	height: 100%;
+	width: 40px;
+	top: 0;
+	right: 0;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#676767', endColorstr = '#010101');
+	/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+	/*Element must have a height (not auto)*/
+	/*All filters must be placed together*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#676767', endColorstr = '#010101')";
+	/*Element must have a height (not auto)*/
+	/*All filters must be placed together*/
+	background-image: -moz-linear-gradient(left, #676767, #010101);
+	background-image: -ms-linear-gradient(left, #676767, #010101);
+	background-image: -o-linear-gradient(left, #676767, #010101);
+	background-image: -webkit-gradient(linear, left top, right top, from(#676767), to(#010101));
+	background-image: -webkit-linear-gradient(left, #676767, #010101);
+	background-image: linear-gradient(left, #676767, #010101);
+	/*--IE9 DOES NOT SUPPORT CSS3 GRADIENT BACKGROUNDS--*/
+}
+
+
+/*Jumbotron*/
+.jumbotron{
+	padding: 50px 0 0;
+	background-image: url(../img/main-bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-color: #e2dfda;
+	margin:0px;
+}
+
+.jumbotron p{
+	font-size: 16px;
+	margin-bottom: 3px;
+}
+
+.jumbotron  h2{
+	font-family: Arial;
+	margin-top: 0px;
+	color: white;
+	line-height: 63px;
+	font-weight: normal;
+	font-size: 51px;
+    font-weight: bold;
+}
+
+
+/*Main content*/
+.main-content{
+	padding-bottom:20px;
+	position: relative;
+	height: 438px;
+}
+
+.main-img{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+
+/*Right Column*/
+.caja-logo{
+	padding:26px 10px;
+}
+
+.caja-blanca{
+	background-color: #000000;
+	padding:13px 20px;
+	position: absolute;
+    width: 330px;
+    z-index: 99;
+}
+
+.caja-blanca strong{
+	font-size: 17px;
+}
+
+input.SWbutton {
+    background: red;
+    border: none;
+    padding: 3px 0;
+    width: 49%;
+    border-radius: 4px;
+    font-size: 21px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+#planet {
+	margin-bottom: 15px;
+	color: #fff;
+}
+
+#wookieeResults {
+	color: #fff;
+}
+
+.numero-grande{
+	color: #fb1800;
+	font-family: Arial;
+	font-size: 40px;
+	line-height: 40px;
+	text-decoration: none;
+}
+
+.numero-grande:hover{
+	color: #fb1800;
+}
+
+p.prefieres{
+	text-align: center;
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	margin: 10px 0px 10px;
+}
+
+form h3 {
+	font-family: Arial;
+	color: black;
+	border: 1px solid #fb1800;
+	margin: 0px auto 10px;
+	padding: 10px;
+	font-size: 26px;
+}
+
+form h4{
+	font-size: 15px;
+	margin-top: 20px;
+}
+
+form h3 img.icono{
+	margin-right: 10px;
+}
+
+.btn-formulario{
+    background-color: #a1e614;
+    color: white;
+    font-family: Arial;
+    font-size: 23px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    padding: 3px 0;
+    margin-top: 10px;
+}
+
+.btn-formulario img.icono{
+	margin-left: 10px;
+}
+
+.btn-formulario:hover{
+	color: white;
+}
+
+
+/*Footer*/
+footer{
+	padding-bottom: 20px;
+	background-color: white;
+}
+
+footer h2 {
+	font-family: Arial;
+	color: black;
+	font-size: 38px;
+}
+
+footer p strong {
+	font-size: 28px;
+	line-height: 26px;
+}
+
+.detalles li{
+	position: relative;
+	margin: 0px 10px;
+	width: 136px;
+	font-size: 13px;
+}
+
+.detalles li:after{
+	content: '+';
+	position: absolute;
+	top: 50%;
+	right: -26px;
+	font-size: 50px;
+	line-height: 50px;
+	font-family: Arial;
+	margin-top: -50px;
+}
+
+.detalles li:last-child:after{
+	display: none;
+}
+
+.detalles li img{
+	display: block;
+	max-width: 100%;
+	margin: 0px auto 10px;
+}
+
+
+
+/* =========================================
+				RESPONSIVE
+==========================================*/
+
+
+
+@media(max-width: 990px){
+	.container{
+		width: 100%;
+	}
+
+	.header-mobile{
+		background-color: white;
+		height: 55px;
+	}
+
+	.header-mobile .container{
+		padding: 0px;
+	}
+
+	.header-mobile .row{
+		padding: 0px;
+	}
+
+	.header-mobile .col-xs-6{
+		padding: 0px;
+	}
+
+	.fb-header-mobile{
+		font-size: 11px;
+		line-height: 15px;
+		padding-left: 49px;
+		padding-top: 6px;
+		background-image: url(../img/logo-fb.png);
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+		background-size: 40px;
+		height: 40px;
+		margin: 7px 0px 0px 10px;
+	}
+
+}
+
+@media(max-width: 768px){
+	.bg-rojo{
+		background-color: #fb1800;
+		height:55px;
+		text-align: center;
+		padding: 19px 10px;
+	}
+
+	#logomobile{
+		width: 140px;
+	}
+
+	.jumbotron{
+		background-image: none;
+		background-position: top center;
+	}
+
+	.jumbotron .container{
+		padding: 0px;
+	}
+
+	.jumbotron .col-md-8{
+		padding:0px;
+	}
+
+	.cuadro-top{
+		background-color: #a49e8d;
+	}
+
+	.telefono-mobile{
+		display: inline-block;
+		padding: 10px;
+		background-color: white;
+		margin-top: 15px;
+		margin-bottom: 10px;
+		border-radius: 7px;
+	}
+
+	.telefono-mobile span.tel{
+		color: #fb1800;
+		font-family: Arial;
+		font-size: 33px;
+		line-height: 31px;
+		vertical-align: middle;
+	}
+
+	.no-padding-xs{
+		padding:0px;
+	}
+
+	.btn-formulario{
+		margin-top: 10px;
+		font-size: 27px;
+	}
+
+	.detalles{
+		margin-top:20px;
+	}
+
+	.detalles li{
+		width: 49%;
+		margin: 0px;
+		padding: 0px;
+		height: 155px;
+	}
+
+	.detalles li img{
+		width: 77px;
+	}
+
+	.detalles li:after{
+		display: none;
+	}
+
+}
