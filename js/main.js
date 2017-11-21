@@ -74,10 +74,21 @@ async function planetSearchResults () {
   let showSearch = document.getElementById("searchBox");
 
   searchResult.forEach(function(result){
-    showSearch.innerHTML += `
+    showSearch.innerHTML = `
                               <p>Name: ${result.name}</p>
-                              <p>Id: ${result.url}</p>
-                            `
+                              <p>Height: ${result.height}</p>
+                              <p>Hair color: ${result.hair_color}</p>
+                              <p>Skin color: ${result.skin_color}</p>
+                              <p>Eye color: ${result.eye_color}</p>
+                              <p>Gender: ${result.gender}</p>
+                              <p>Homeworld: ${result.homeworld}</p>
+                            ` 
+                            + showSearch.innerHTML // los datos que acabamos de buscar aparecen encima
+
+
+                            console.log("La URL del planeta es" + " " + result.homeworld);
+
+
 
     //Buscamos el ID de cada personaje para poder pasarlo a formato wookie
     let urlId = result.url;
@@ -107,7 +118,13 @@ async function planetSearchResults () {
 
             let showWookiee = document.getElementById("wookieeResults");
             showWookiee.innerHTML +=  `
-                                        <p>whrascwo: <span>${wookieeData.whrascwo}</span></p>
+                                        <p>Whrascwo: <span>${wookieeData.whrascwo}</span></p>
+                                        <p>Acwoahrracao: <span>${wookieeData.acwoahrracao}</span></p>
+                                        <p>Acraahrc_oaooanoorc: <span>${wookieeData.acraahrc_oaooanoorc}</span></p>
+                                        <p>Corahwh_oaooanoorc: <span>${wookieeData.corahwh_oaooanoorc}</span></p>
+                                        <p>Worowo_oaooanoorc: <span>${wookieeData.worowo_oaooanoorc}</span></p>
+                                        <p>Rrwowhwaworc: ${wookieeData.rrwowhwaworc}</p>
+                                        <p>Acooscwoohoorcanwa: ${wookieeData.acooscwoohoorcanwa}</p>
                                       `
           }
 
@@ -170,4 +187,6 @@ perro = perritos[2]
 // Métodos que se le pueden aplicar a los arrays:
 // Mirar reduce, entender pero no utilizar <3
 // Sort es importante, ordena los elementos
+
+
 
