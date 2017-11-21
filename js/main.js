@@ -81,16 +81,8 @@ async function planetSearchResults () {
 
     //Buscamos el ID de cada personaje para poder pasarlo a formato wookie
     let urlId = result.url;
-
     console.log(urlId);
-
     console.log(urlId[28]);
-
-    // let id;
-
-    // for (var i = 28; i < urlId.lenght; i++) {
-    //   id += urlId[i];
-    // }
 
       // Con el botón de Wookie y con el ID que hemos cogido de la URL, hacemos que se pase a wookie
       const wookieeTranslate = document.getElementById("wookieeButtonForPlanets");
@@ -107,7 +99,19 @@ async function planetSearchResults () {
 
           console.log(searchedData);
 
-          // console.log(result.name);
+          async function functionWookieeData () {
+            const wookieUrl = urlId + wookieFormat;
+            let firstWookieeData = await fetch(wookieUrl);
+            let wookieeData = await firstWookieeData.json();
+            console.log(wookieeData);
+
+            let showWookiee = document.getElementById("wookieeResults");
+            showWookiee.innerHTML +=  `
+                                        <p>whrascwo: <span>${wookieeData.whrascwo}</span></p>
+                                      `
+          }
+
+          functionWookieeData();
 
         }();
 
