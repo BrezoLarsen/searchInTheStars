@@ -23,6 +23,10 @@ a, a:hover, a:link, a:active, a:visited{
 	text-decoration: none;
 }
 
+p {
+	color: #fff;
+}
+
 .img-responsive{
 	margin: auto;
 }
@@ -33,15 +37,7 @@ a, a:hover, a:link, a:active, a:visited{
 }
 
 
-/*Buttons*/
-.btn-mapfre{
-	background-color: white;
-	text-align: center;
-	color: #fb1800;
-	text-decoration: none;
-	font-family: Arial;
-	font-size: 18px;
-}
+
 
 /*Margins, paddings*/
 .mtop{
@@ -49,48 +45,6 @@ a, a:hover, a:link, a:active, a:visited{
 }
 
 
-/*Header*/
-h1.fb-header{
-	font-size: 15px;
-	margin: 20px 0px 36px;
-	padding: 13px 0px;
-	padding-left: 58px;
-	background-image: url(../img/logo-fb.png);
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	background-color: rgba(255, 255, 255, 0.4);
-	position: relative;
-	display: inline-block;
-	padding-right: 55px;
-}
-
-h1.fb-header:after{
-	content:'';
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	width: 100px;
-	content:'';
-	position: absolute;
-	height: 100%;
-	width: 40px;
-	top: 0;
-	right: 0;
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#676767', endColorstr = '#010101');
-	/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
-	/*Element must have a height (not auto)*/
-	/*All filters must be placed together*/
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#676767', endColorstr = '#010101')";
-	/*Element must have a height (not auto)*/
-	/*All filters must be placed together*/
-	background-image: -moz-linear-gradient(left, #676767, #010101);
-	background-image: -ms-linear-gradient(left, #676767, #010101);
-	background-image: -o-linear-gradient(left, #676767, #010101);
-	background-image: -webkit-gradient(linear, left top, right top, from(#676767), to(#010101));
-	background-image: -webkit-linear-gradient(left, #676767, #010101);
-	background-image: linear-gradient(left, #676767, #010101);
-	/*--IE9 DOES NOT SUPPORT CSS3 GRADIENT BACKGROUNDS--*/
-}
 
 
 /*Jumbotron*/
