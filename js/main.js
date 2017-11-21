@@ -30,8 +30,6 @@ buttonForPlanet.addEventListener('click', function() { // El parámetro event lo
 
 })
 
-// hacer que muestre los siguientes 10 planetas
-// debemos avanzar a la página 2
 
 // WORKING CODE FOR WOOKIE LANGUAJE
 /*const wookieeButtonForPlanets = document.getElementById("wookieeButtonForPlanets");
@@ -54,6 +52,8 @@ showWookiee.innerHTML += `
 wookieePlanetData();
 
 })*/
+
+
 
 // SEARCH BUTTON
 const searchButton = document.getElementById("search");
@@ -79,41 +79,39 @@ async function planetSearchResults () {
                               <p>Id: ${result.url}</p>
                             `
 
-                            console.log(result.url);
+    //Buscamos el ID de cada personaje para poder pasarlo a formato wookie
+    let urlId = result.url;
 
-  })
+    console.log(urlId);
 
-  // Pasamos los datos a lenguaje wookie NOT WORKS
+    console.log(urlId[28]);
 
-  // const url = "https://swapi.co/api/people/1";
-  // console.log(url[28]);
-  // let id;
-  // for (var i = 28; i < url.lenght; i++) {
-  // id += url[i];
-  // }
-  // console.log(id);
-  const wookieeTranslate = document.getElementById("wookieeButtonForPlanets");
-  wookieeTranslate.addEventListener('click', function(event) {
-    const wookieFormat = "?format=wookiee";
+    // let id;
 
-    let getId = function(result) {
+    // for (var i = 28; i < urlId.lenght; i++) {
+    //   id += urlId[i];
+    // }
 
-      const url = "https://swapi.co/api/people/" + result.url;
+      // Con el botón de Wookie y con el ID que hemos cogido de la URL, hacemos que se pase a wookie
+      const wookieeTranslate = document.getElementById("wookieeButtonForPlanets");
 
-      const id = url;
+      wookieeTranslate.addEventListener('click', function(event) {
 
-      console.log(url);
+        const wookieFormat = "?format=wookiee";
 
-      // let id2 = url.slice(28);
-      // console.log(id2);
+        let getId = function(result) {
 
-    }();
+          const wookieUrl = urlId + wookieFormat;
 
+          console.log(wookieUrl);
 
+          console.log(searchedData);
 
-    // const wookieUrl = "https://swapi.co/api/people/" + id2 + wookieFormat;
+          // console.log(result.name);
 
-    // console.log(wookieUrl);
+        }();
+
+      })
 
   })
 
@@ -153,7 +151,6 @@ planetSearchResults();
 /*
 const perritos = ["bulldog", "pastor", "dogo"]
 // 0 1 2
-
 perritos.forEach(function(perro, indice){
 console.log(perro, " : ", indice);
 })
@@ -164,3 +161,9 @@ perro = perritos[2]
 */
 
 //Método: función que solo actua sobre un objeto
+
+
+// Métodos que se le pueden aplicar a los arrays:
+// Mirar reduce, entender pero no utilizar <3
+// Sort es importante, ordena los elementos
+
