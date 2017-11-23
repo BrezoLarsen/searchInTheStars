@@ -86,6 +86,14 @@ p {
 	right: 0px;
 }
 
+#wookiee {
+    position: absolute;
+    z-index: 9;
+    left: 0px;
+    top: 305px;
+    opacity: 0;
+}
+
 
 /*Right Column*/
 .caja-logo{
@@ -121,7 +129,18 @@ input.SWbutton {
 }
 
 #wookieeResults {
-	color: #fff;
+    position: absolute;
+    top: 62px;
+    left: 236px;
+    z-index: 999;
+    max-width: 176px;
+
+}
+
+#wookieeResults p {
+    color: #000;
+    font-size: 11px;
+    margin-bottom: 0;
 }
 
 .numero-grande{
