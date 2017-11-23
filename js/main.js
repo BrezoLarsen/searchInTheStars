@@ -55,6 +55,8 @@ wookieePlanetData();
 
 
 
+
+
 // SEARCH BUTTON
 const searchButton = document.getElementById("search");
 
@@ -66,28 +68,25 @@ async function planetSearchResults () {
   const url = "https://swapi.co/api/people/?search=" + userSearchValue;
   let firstSearchData = await fetch(url);
   let searchedData = await firstSearchData.json();
-  console.log(searchedData);
+  console.log("Objeto que hemos buscado: " + searchedData);
   const searchResult = searchedData.results;
-  console.log(url);
-  console.log(firstSearchData.url);
+  console.log("URL del objeto que buscamos: " + url);
 
   let showSearch = document.getElementById("searchBox");
 
   searchResult.forEach(function(result){
     showSearch.innerHTML = `
-                              <p>Name: ${result.name}</p>
-                              <p>Height: ${result.height}</p>
-                              <p>Hair color: ${result.hair_color}</p>
-                              <p>Skin color: ${result.skin_color}</p>
-                              <p>Eye color: ${result.eye_color}</p>
-                              <p>Gender: ${result.gender}</p>
-                              <p>Homeworld: ${result.homeworld}</p>
-                            ` 
+                              <p><strong>Name:</strong> ${result.name}</p>
+                              <p><strong>Height:</strong> ${result.height}</p>
+                              <p><strong>Hair color:</strong> ${result.hair_color}</p>
+                              <p><strong>Skin color:</strong> ${result.skin_color}</p>
+                              <p><strong>Eye color:</strong> ${result.eye_color}</p>
+                              <p><strong>Gender:</strong> ${result.gender}</p>
+                              <p><strong>Homeworld:</strong> <a href="${result.homeworld}">${result.homeworld}</a></p>
+                            `
                             + showSearch.innerHTML // los datos que acabamos de buscar aparecen encima
 
-
                             console.log("La URL del planeta es" + " " + result.homeworld);
-
 
 
     //Buscamos el ID de cada personaje para poder pasarlo a formato wookie
@@ -106,9 +105,7 @@ async function planetSearchResults () {
 
           const wookieUrl = urlId + wookieFormat;
 
-          console.log(wookieUrl);
-
-          console.log(searchedData);
+          console.log("Esta es la URL del formato wookiee: " + wookieUrl);
 
           async function functionWookieeData () {
             const wookieUrl = urlId + wookieFormat;
@@ -118,19 +115,37 @@ async function planetSearchResults () {
 
             let showWookiee = document.getElementById("wookieeResults");
             showWookiee.innerHTML +=  `
-                                        <p>Whrascwo: <span>${wookieeData.whrascwo}</span></p>
-                                        <p>Acwoahrracao: <span>${wookieeData.acwoahrracao}</span></p>
-                                        <p>Acraahrc_oaooanoorc: <span>${wookieeData.acraahrc_oaooanoorc}</span></p>
-                                        <p>Corahwh_oaooanoorc: <span>${wookieeData.corahwh_oaooanoorc}</span></p>
-                                        <p>Worowo_oaooanoorc: <span>${wookieeData.worowo_oaooanoorc}</span></p>
-                                        <p>Rrwowhwaworc: ${wookieeData.rrwowhwaworc}</p>
-                                        <p>Acooscwoohoorcanwa: ${wookieeData.acooscwoohoorcanwa}</p>
+                                        <p><strong>Whrascwo:</strong> <span>${wookieeData.whrascwo}</span></p>
+                                        <p><strong>Acwoahrracao:</strong> <span>${wookieeData.acwoahrracao}</span></p>
+                                        <p><strong>Acraahrc_oaooanoorc:</strong> <span>${wookieeData.acraahrc_oaooanoorc}</span></p>
+                                        <p><strong>Corahwh_oaooanoorc:</strong> <span>${wookieeData.corahwh_oaooanoorc}</span></p>
+                                        <p><strong>Worowo_oaooanoorc:</strong> <span>${wookieeData.worowo_oaooanoorc}</span></p>
+                                        <p><strong>Rrwowhwaworc:</strong> ${wookieeData.rrwowhwaworc}</p>
                                       `
           }
 
           functionWookieeData();
 
         }();
+
+      })
+
+
+      // Wookiee image appears
+      wookieeTranslate.addEventListener('click', function(event) {
+        const wookieeStyle = document.getElementById("wookiee");
+        // Toggle style of wookiee image for appear & disappear
+        if(wookieeStyle.style.top === "20px") {
+          wookieeStyle.style.top = "305px";
+        } else {
+            wookieeStyle.style.top = "20px";
+        }
+
+        if(wookieeStyle.style.opacity === "1") {
+          wookieeStyle.style.opacity = "0";
+        } else {
+            wookieeStyle.style.opacity = "1";
+        }
 
       })
 
@@ -141,6 +156,13 @@ async function planetSearchResults () {
 planetSearchResults();
 
 })
+
+
+
+
+
+// Hacer que los datos solo aparezcan una vez
+// Al darle de nuevo al botón de buscar desaparecen los datos
 
 
 
