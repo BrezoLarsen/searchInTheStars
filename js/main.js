@@ -73,7 +73,6 @@ async function planetSearchResults () {
   console.log("URL del objeto que buscamos: " + url);
 
   let showSearch = document.getElementById("searchBox");
-
   searchResult.forEach(function(result){
     showSearch.innerHTML = `
                               <p><strong>Name:</strong> ${result.name}</p>
@@ -89,7 +88,7 @@ async function planetSearchResults () {
                             console.log("La URL del planeta es" + " " + result.homeworld);
 
 
-    //Buscamos el ID de cada personaje para poder pasarlo a formato wookie
+    //Buscamos el ID de cada personaje para poder pasarlo a formato wookiee
     let urlId = result.url;
     console.log(urlId);
     console.log(urlId[28]);
@@ -113,18 +112,20 @@ async function planetSearchResults () {
             let wookieeData = await firstWookieeData.json();
             console.log(wookieeData);
 
-            let showWookiee = document.getElementById("wookieeResults");
-            showWookiee.innerHTML +=  `
-                                        <p><strong>Whrascwo:</strong> <span>${wookieeData.whrascwo}</span></p>
-                                        <p><strong>Acwoahrracao:</strong> <span>${wookieeData.acwoahrracao}</span></p>
-                                        <p><strong>Acraahrc_oaooanoorc:</strong> <span>${wookieeData.acraahrc_oaooanoorc}</span></p>
-                                        <p><strong>Corahwh_oaooanoorc:</strong> <span>${wookieeData.corahwh_oaooanoorc}</span></p>
-                                        <p><strong>Worowo_oaooanoorc:</strong> <span>${wookieeData.worowo_oaooanoorc}</span></p>
-                                        <p><strong>Rrwowhwaworc:</strong> ${wookieeData.rrwowhwaworc}</p>
-                                      `
-          }
 
-          functionWookieeData();
+            function showWookieeTranslate() {
+              let showWookiee = document.getElementById("wookieeResults");
+              showWookiee.innerHTML +=  `
+                                          <p><strong>Whrascwo:</strong> <span>${wookieeData.whrascwo}</span></p>
+                                          <p><strong>Acwoahrracao:</strong> <span>${wookieeData.acwoahrracao}</span></p>
+                                          <p><strong>Acraahrc_oaooanoorc:</strong> <span>${wookieeData.acraahrc_oaooanoorc}</span></p>
+                                          <p><strong>Corahwh_oaooanoorc:</strong> <span>${wookieeData.corahwh_oaooanoorc}</span></p>
+                                          <p><strong>Worowo_oaooanoorc:</strong> <span>${wookieeData.worowo_oaooanoorc}</span></p>
+                                          <p><strong>Rrwowhwaworc:</strong> ${wookieeData.rrwowhwaworc}</p>
+                                        `
+            } showWookieeTranslate();
+
+          } functionWookieeData();
 
         }();
 
