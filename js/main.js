@@ -1,6 +1,5 @@
 // WORKING CODE FOR PLANETS
-
-const buttonForPlanet = document.getElementById("buttonForPlanet");
+var buttonForPlanet = document.getElementById("buttonForPlanet");
 
 async function planetData (url) {
   let firstData = await fetch(url);
@@ -12,23 +11,175 @@ async function planetData (url) {
     let showPlanet = document.getElementById("planetsResults");
     showPlanet.innerHTML += `
                               <div id="planet">
-                                <p>Name: <span>${planet.name}</span></p>
-                                <p>Rotation period: <span>${planet.rotation_period}</span></p>
-                                <p>Orbital period: <span>${planet.orbital_period}</span> </p>
-                                <p>Diameter: <span>${planet.diameter}</span></p>
-                                <p>Climate: <span>${planet.climate}</span></p>
+                              <p>Name: <span>${planet.name}</span></p>
+                              <p>Rotation period: <span>${planet.rotation_period}</span></p>
+                              <p>Orbital period: <span>${planet.orbital_period}</span> </p>
+                              <p>Diameter: <span>${planet.diameter}</span></p>
+                              <p>Climate: <span>${planet.climate}</span></p>
                               </div>
                             `
-
-    })
-
+                            // + showPlanet.innerHTML
+  })
 }
 
-buttonForPlanet.addEventListener('click', function() { // El parámetro event lo pasamos cuando queremos acceder al valor en el futuro, por ejemplo, en el caso de necesitar el placeholder de un input
-
+buttonForPlanet.addEventListener('click', function clickEvent() { // El parámetro event lo pasamos cuando queremos acceder al valor en el futuro, por ejemplo, en el caso de necesitar el placeholder de un input
+  //Eliminamos el evento para que la lista de planetas aparezca solo una vez
+  buttonForPlanet.removeEventListener("click", clickEvent);
   planetData("https://swapi.co/api/planets/");
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SEARCH BUTTON
+const searchButton = document.getElementById("search");
+
+searchButton.addEventListener('click', function(event) {
+
+  const userSearchValue = document.getElementById("searchValue").value;
+
+  async function planetSearchResults () {
+    const url = "https://swapi.co/api/people/?search=" + userSearchValue;
+    let firstSearchData = await fetch(url);
+    let searchedData = await firstSearchData.json();
+    console.log("Objeto que hemos buscado: " + searchedData);
+    const searchResult = searchedData.results;
+    console.log("URL del objeto que buscamos: " + url);
+
+
+    let showSearch = document.getElementById("searchBox");
+
+    searchResult.forEach(function(result){
+
+      showSearch.innerHTML = `
+                              <p><strong>Name:</strong> ${result.name}</p>
+                              <p><strong>Height:</strong> ${result.height}</p>
+                              <p><strong>Hair color:</strong> ${result.hair_color}</p>
+                              <p><strong>Skin color:</strong> ${result.skin_color}</p>
+                              <p><strong>Eye color:</strong> ${result.eye_color}</p>
+                              <p><strong>Gender:</strong> ${result.gender}</p>
+                              <p><strong>Homeworld:</strong> <a href="${result.homeworld}">${result.homeworld}</a></p>
+                            `
+                            + showSearch.innerHTML // los datos que acabamos de buscar aparecen encima
+
+                            console.log("La URL del planeta es" + " " + result.homeworld);
+
+    // Eliminamos los datos buscados previamente con un segundo click
+    searchButton.addEventListener('click', function() {
+      var timesClicked = 0;
+      timesClicked++;
+      if (timesClicked == 1) {
+        let hiddenSearch = document.getElementById("searchBox");
+        hiddenSearch.innerHTML = "";
+        console.log(timesClicked);
+      }
+    })
+
+
+
+    //Buscamos el ID de cada personaje para poder pasarlo a formato wookiee
+    let urlId = result.url;
+    console.log("ID del personaje: " + urlId[28]);
+      // Con el botón de Wookie y con el ID que hemos cogido de la URL, hacemos que se pase a wookie
+      const wookieeTranslate = document.getElementById("wookieeButtonForPlanets");
+
+      wookieeTranslate.addEventListener('click', function(event) {
+
+        // event.preventDefault();
+
+        const wookieFormat = "?format=wookiee";
+
+        let getId = function(result) {
+
+          const wookieUrl = urlId + wookieFormat;
+
+          console.log("Esta es la URL del formato wookiee: " + wookieUrl);
+
+          async function functionWookieeData () {
+            const wookieUrl = urlId + wookieFormat;
+            let firstWookieeData = await fetch(wookieUrl);
+            let wookieeData = await firstWookieeData.json();
+            console.log(wookieeData);
+
+            function showWookieeTranslate() {
+              let showWookiee = document.getElementById("wookieeResults");
+              showWookiee.innerHTML =   `
+                                          <p><strong>Whrascwo:</strong> <span>${wookieeData.whrascwo}</span></p>
+                                          <p><strong>Acwoahrracao:</strong> <span>${wookieeData.acwoahrracao}</span></p>
+                                          <p><strong>Acraahrc_oaooanoorc:</strong> <span>${wookieeData.acraahrc_oaooanoorc}</span></p>
+                                          <p><strong>Corahwh_oaooanoorc:</strong> <span>${wookieeData.corahwh_oaooanoorc}</span></p>
+                                          <p><strong>Worowo_oaooanoorc:</strong> <span>${wookieeData.worowo_oaooanoorc}</span></p>
+                                          <p><strong>Rrwowhwaworc:</strong> ${wookieeData.rrwowhwaworc}</p>
+                                        `
+            } showWookieeTranslate();
+
+          } functionWookieeData();
+
+        }();
+
+      })
+
+
+      // Wookiee image appears
+      wookieeTranslate.addEventListener('click', function(event) {
+
+        const wookieeStyle = document.getElementById("wookiee");
+        // Toggle style of wookiee image for appear & disappear
+        if(wookieeStyle.style.top === "20px") {
+          wookieeStyle.style.top = "305px";
+        } else {
+          wookieeStyle.style.top = "20px";
+        }
+
+        if(wookieeStyle.style.opacity === "1") {
+          wookieeStyle.style.opacity = "0";
+        } else {
+          wookieeStyle.style.opacity = "1";
+        }
+
+
+        // Wookiee translate disappears  ------------------- DONT WORKS -------------------
+        wookieeTranslate.addEventListener('click', function() {
+          var timesClicked = 0;
+
+          timesClicked++;
+
+          if (timesClicked == 1) {
+            let toggleWookiee = document.getElementById("wookieeResults");
+            toggleWookiee.innerHTML = "";
+            console.log("<<<<<<" + timesClicked);
+          }
+
+        })
+        // !Wookiee translate disappears
+
+      })
+
+    })
+
+
+
+  }
+
+  planetSearchResults();
+
+})
+
+
+
+
+
 
 
 // WORKING CODE FOR WOOKIE LANGUAJE
@@ -57,115 +208,24 @@ wookieePlanetData();
 
 
 
-// SEARCH BUTTON
-const searchButton = document.getElementById("search");
-
-searchButton.addEventListener('click', function(event) {
-
-const userSearchValue = document.getElementById("searchValue").value;
-
-async function planetSearchResults () {
-  const url = "https://swapi.co/api/people/?search=" + userSearchValue;
-  let firstSearchData = await fetch(url);
-  let searchedData = await firstSearchData.json();
-  console.log("Objeto que hemos buscado: " + searchedData);
-  const searchResult = searchedData.results;
-  console.log("URL del objeto que buscamos: " + url);
-
-  let showSearch = document.getElementById("searchBox");
-  searchResult.forEach(function(result){
-    showSearch.innerHTML = `
-                              <p><strong>Name:</strong> ${result.name}</p>
-                              <p><strong>Height:</strong> ${result.height}</p>
-                              <p><strong>Hair color:</strong> ${result.hair_color}</p>
-                              <p><strong>Skin color:</strong> ${result.skin_color}</p>
-                              <p><strong>Eye color:</strong> ${result.eye_color}</p>
-                              <p><strong>Gender:</strong> ${result.gender}</p>
-                              <p><strong>Homeworld:</strong> <a href="${result.homeworld}">${result.homeworld}</a></p>
-                            `
-                            + showSearch.innerHTML // los datos que acabamos de buscar aparecen encima
-
-                            console.log("La URL del planeta es" + " " + result.homeworld);
 
 
-    //Buscamos el ID de cada personaje para poder pasarlo a formato wookiee
-    let urlId = result.url;
-    console.log(urlId);
-    console.log(urlId[28]);
-
-      // Con el botón de Wookie y con el ID que hemos cogido de la URL, hacemos que se pase a wookie
-      const wookieeTranslate = document.getElementById("wookieeButtonForPlanets");
-
-      wookieeTranslate.addEventListener('click', function(event) {
-
-        const wookieFormat = "?format=wookiee";
-
-        let getId = function(result) {
-
-          const wookieUrl = urlId + wookieFormat;
-
-          console.log("Esta es la URL del formato wookiee: " + wookieUrl);
-
-          async function functionWookieeData () {
-            const wookieUrl = urlId + wookieFormat;
-            let firstWookieeData = await fetch(wookieUrl);
-            let wookieeData = await firstWookieeData.json();
-            console.log(wookieeData);
 
 
-            function showWookieeTranslate() {
-              let showWookiee = document.getElementById("wookieeResults");
-              showWookiee.innerHTML +=  `
-                                          <p><strong>Whrascwo:</strong> <span>${wookieeData.whrascwo}</span></p>
-                                          <p><strong>Acwoahrracao:</strong> <span>${wookieeData.acwoahrracao}</span></p>
-                                          <p><strong>Acraahrc_oaooanoorc:</strong> <span>${wookieeData.acraahrc_oaooanoorc}</span></p>
-                                          <p><strong>Corahwh_oaooanoorc:</strong> <span>${wookieeData.corahwh_oaooanoorc}</span></p>
-                                          <p><strong>Worowo_oaooanoorc:</strong> <span>${wookieeData.worowo_oaooanoorc}</span></p>
-                                          <p><strong>Rrwowhwaworc:</strong> ${wookieeData.rrwowhwaworc}</p>
-                                        `
-            } showWookieeTranslate();
-
-          } functionWookieeData();
-
-        }();
-
-      })
 
 
-      // Wookiee image appears
-      wookieeTranslate.addEventListener('click', function(event) {
-        const wookieeStyle = document.getElementById("wookiee");
-        // Toggle style of wookiee image for appear & disappear
-        if(wookieeStyle.style.top === "20px") {
-          wookieeStyle.style.top = "305px";
-        } else {
-            wookieeStyle.style.top = "20px";
-        }
+// EVENTOS AL PULSAR UNA TECLA
+var keycode = document.getElementById('searchValue');
 
-        if(wookieeStyle.style.opacity === "1") {
-          wookieeStyle.style.opacity = "0";
-        } else {
-            wookieeStyle.style.opacity = "1";
-        }
+keycode.addEventListener('keydown', funcionEventoPulsarTecla);
 
-      })
+function funcionEventoPulsarTecla(event){
+  console.log(event);
 
-  })
-
+  if(event.keyCode == 82) {
+    alert("You press enter key")
+  }
 }
-
-planetSearchResults();
-
-})
-
-
-
-
-
-// Hacer que los datos solo aparezcan una vez
-// Al darle de nuevo al botón de buscar desaparecen los datos
-
-
 
 
 
@@ -213,3 +273,16 @@ perro = perritos[2]
 
 
 
+// CARGA DE UN GIF MIENTRAS SE CARGAN LOS DATOS
+// async function get(url) {
+//   // píntame el gif en algunaparte
+//   let algunaparte = document.getElementById("pizarra");
+//   algunaparte.innerHTML = '<img src="">'
+//   const data = await fetch(url);
+//   const dataJson = await data.json()
+//   pinta(dataJson);
+// }
+
+
+// SABER QUÉ TECLA CORRESPONDE A CADA EVENTO JS
+// http://keycode.info/

@@ -51,7 +51,7 @@ p {
 .jumbotron{
 	padding: 50px 0 0;
 	background-image: url(../img/main-bg.jpg);
-	background-repeat: no-repeat;
+	background-repeat: repeat-x;
 	background-position: center bottom;
 	background-color: #e2dfda;
 	margin:0px;
@@ -70,6 +70,11 @@ p {
 	font-weight: normal;
 	font-size: 51px;
     font-weight: bold;
+}
+
+.max-container {
+	width: 90%;
+	margin: auto;
 }
 
 
@@ -108,6 +113,10 @@ p {
     z-index: 99;
 }
 
+.caja-blanca h4 {
+	color: white;
+}
+
 .caja-blanca strong{
 	font-size: 17px;
 }
@@ -123,9 +132,24 @@ input.SWbutton {
     margin-bottom: 10px;
 }
 
+#planetsResults {
+    position: absolute;
+    top: 345px;
+}
+
 #planet {
 	margin-bottom: 15px;
-	color: #fff;
+    color: #fff;
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+    background: black;
+    padding: 5px;
+    border: 1px solid white;
+}
+
+#planet p {
+	font-size: 12px;
 }
 
 #wookieeResults {
@@ -202,6 +226,11 @@ form h3 img.icono{
 }
 
 
+
+
+
+
+
 /*Footer*/
 footer{
 	padding-bottom: 20px;
@@ -209,9 +238,16 @@ footer{
 }
 
 footer h2 {
-	font-family: Arial;
-	color: black;
-	font-size: 38px;
+    font-family: Arial;
+    color: black;
+    font-size: 38px;
+    font-weight: bolder;
+    font-variant: petite-caps;
+    text-align: center;
+}
+
+footer h2 strong {
+	font-weight: 900;
 }
 
 footer p strong {
