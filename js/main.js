@@ -75,6 +75,7 @@ searchButton.addEventListener('click', function(event) {
 
                             console.log("La URL del planeta es" + " " + result.homeworld);
 
+
     // Eliminamos los datos buscados previamente con un segundo click
     searchButton.addEventListener('click', function() {
       var timesClicked = 0;
@@ -91,12 +92,12 @@ searchButton.addEventListener('click', function(event) {
     //Buscamos el ID de cada personaje para poder pasarlo a formato wookiee
     let urlId = result.url;
     console.log("ID del personaje: " + urlId[28]);
-      // Con el botón de Wookie y con el ID que hemos cogido de la URL, hacemos que se pase a wookie
+      // Con el botón de Wookie y con el ID que hemos cogido de la URL, hacemos que se pase a wookiee
       const wookieeTranslate = document.getElementById("wookieeButtonForPlanets");
 
       wookieeTranslate.addEventListener('click', function(event) {
 
-        // event.preventDefault();
+        event.preventDefault();
 
         const wookieFormat = "?format=wookiee";
 
@@ -112,17 +113,22 @@ searchButton.addEventListener('click', function(event) {
             let wookieeData = await firstWookieeData.json();
             console.log(wookieeData);
 
-            function showWookieeTranslate() {
-              let showWookiee = document.getElementById("wookieeResults");
-              showWookiee.innerHTML =   `
-                                          <p><strong>Whrascwo:</strong> <span>${wookieeData.whrascwo}</span></p>
-                                          <p><strong>Acwoahrracao:</strong> <span>${wookieeData.acwoahrracao}</span></p>
-                                          <p><strong>Acraahrc_oaooanoorc:</strong> <span>${wookieeData.acraahrc_oaooanoorc}</span></p>
-                                          <p><strong>Corahwh_oaooanoorc:</strong> <span>${wookieeData.corahwh_oaooanoorc}</span></p>
-                                          <p><strong>Worowo_oaooanoorc:</strong> <span>${wookieeData.worowo_oaooanoorc}</span></p>
-                                          <p><strong>Rrwowhwaworc:</strong> ${wookieeData.rrwowhwaworc}</p>
-                                        `
-            } showWookieeTranslate();
+
+// AQUÍ VA EL BUCLE
+                function showWookieeTranslate() {
+                  event.preventDefault();
+                  let showWookiee = document.getElementById("wookieeResults");
+                  showWookiee.innerHTML =   `
+                                              <p><strong>Whrascwo:</strong> <span>${wookieeData.whrascwo}</span></p>
+                                              <p><strong>Acwoahrracao:</strong> <span>${wookieeData.acwoahrracao}</span></p>
+                                              <p><strong>Acraahrc_oaooanoorc:</strong> <span>${wookieeData.acraahrc_oaooanoorc}</span></p>
+                                              <p><strong>Corahwh_oaooanoorc:</strong> <span>${wookieeData.corahwh_oaooanoorc}</span></p>
+                                              <p><strong>Worowo_oaooanoorc:</strong> <span>${wookieeData.worowo_oaooanoorc}</span></p>
+                                              <p><strong>Rrwowhwaworc:</strong> ${wookieeData.rrwowhwaworc}</p>
+                                            `
+                } showWookieeTranslate();
+// AQUÍ ACABA EL BUCLE
+
 
           } functionWookieeData();
 
@@ -133,6 +139,8 @@ searchButton.addEventListener('click', function(event) {
 
       // Wookiee image appears
       wookieeTranslate.addEventListener('click', function(event) {
+
+        event.preventDefault();
 
         const wookieeStyle = document.getElementById("wookiee");
         // Toggle style of wookiee image for appear & disappear
@@ -150,18 +158,19 @@ searchButton.addEventListener('click', function(event) {
 
 
         // Wookiee translate disappears  ------------------- DONT WORKS -------------------
-        wookieeTranslate.addEventListener('click', function() {
-          var timesClicked = 0;
+        // wookieeTranslate.addEventListener('click', function() {
+        //   var timesClicked = 0;
 
-          timesClicked++;
+        //   timesClicked++;
 
-          if (timesClicked == 1) {
-            let toggleWookiee = document.getElementById("wookieeResults");
-            toggleWookiee.innerHTML = "";
-            console.log("<<<<<<" + timesClicked);
-          }
+        //   if (timesClicked == 1) {
+        //     let showWookiee = document.getElementById("wookieeResults");
+        //     showWookiee.innerHTML = "";
+        //     console.log("<<<<<<" + timesClicked);
+        //     console.log(">>>>>>" + showWookiee);
+        //   }
 
-        })
+        // })
         // !Wookiee translate disappears
 
       })
