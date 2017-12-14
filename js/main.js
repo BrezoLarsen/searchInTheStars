@@ -102,7 +102,7 @@ searchButton.addEventListener('click', function(event) {
 
       wookieeTranslate.addEventListener('click', function(event) {
         // Si es true (la primera vez siempre será true) le decimos que ejecute la función
-        if(showWookieeData == true) {
+        if(showWookieeData) {
 
           event.preventDefault();
 
@@ -142,11 +142,11 @@ searchButton.addEventListener('click', function(event) {
 
           // console.log("variableIf = " + showWookieeData);
 
-          } else if(showWookieeData == false) {
+          } else {
 
             // Como es false, ejecutará esta nueva función que hará que desaparezcan los datos
             let hiddenWookie = document.getElementById("wookieeResults");
-            hiddenWookie.innerHTML = " ";
+            hiddenWookie.innerHTML = "";
 
             // Seteamos la variable a true para que al darle al botón reaparezcan los datos
             showWookieeData = true;
