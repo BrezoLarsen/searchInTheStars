@@ -26,15 +26,7 @@ buttonForPlanet.addEventListener('click', function clickEvent() { // El parámet
   //Eliminamos el evento para que la lista de planetas aparezca solo una vez
   buttonForPlanet.removeEventListener("click", clickEvent);
   planetData("https://swapi.co/api/planets/");
-
 })
-
-
-
-
-
-
-
 
 
 
@@ -95,6 +87,7 @@ searchButton.addEventListener('click', function(event) {
     console.log("ID del personaje: " + urlId[28]);
       // Con el botón de Wookie y con el ID que hemos cogido de la URL, hacemos que se pase a wookiee
       const wookieeTranslate = document.getElementById("wookieeButtonForPlanets");
+      let wookieeStyle = document.getElementById("wookiee");
 
       // AQUÍ VA EL BUCLE
       // Esto es un toggle pattern para que la traducción wookiee aparezca y desaparezca al darle al botón, seteamos la variable a true para que se muestre la primera vez que pulsamos el botón
@@ -135,6 +128,9 @@ searchButton.addEventListener('click', function(event) {
 
             } functionWookieeData();
 
+            // Wookiee image appears
+            wookieeStyle.style.opacity = "1"
+
           }();
 
           // Una vez ejecutada, seteamos la variable a false para que al darle una segunda vez al botón no siga el mismo comportamiento
@@ -147,6 +143,7 @@ searchButton.addEventListener('click', function(event) {
             // Como es false, ejecutará esta nueva función que hará que desaparezcan los datos
             let hiddenWookie = document.getElementById("wookieeResults");
             hiddenWookie.innerHTML = "";
+            wookieeStyle.style.opacity = "0";
 
             // Seteamos la variable a true para que al darle al botón reaparezcan los datos
             showWookieeData = true;
@@ -155,30 +152,6 @@ searchButton.addEventListener('click', function(event) {
 
       })
       // AQUÍ ACABA EL BUCLE
-
-
-
-
-      // Wookiee image appears
-      wookieeTranslate.addEventListener('click', function(event) {
-
-        event.preventDefault();
-
-        const wookieeStyle = document.getElementById("wookiee");
-        // Toggle style of wookiee image for appear & disappear
-        if(wookieeStyle.style.top === "20px") {
-          wookieeStyle.style.top = "305px";
-        } else {
-          wookieeStyle.style.top = "20px";
-        }
-
-        if(wookieeStyle.style.opacity === "1") {
-          wookieeStyle.style.opacity = "0";
-        } else {
-          wookieeStyle.style.opacity = "1";
-        }
-
-      })
 
     })
 
